@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { increment, incrementCanVary } from './redux/reducer/counterSlice'
+import { fetchComments, increment, incrementCanVary } from './redux/reducer/counterSlice'
 import Test from './Test'
+import { newVar } from './redux/thunk/newThunk'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,14 +29,6 @@ function App() {
   const dispatch = useDispatch();
 
   console.log(myState);
-
-
-
-
-
-
-
-
 
 
 
@@ -64,18 +57,6 @@ function App() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //make  a decrement for a variable number
 
 
@@ -89,10 +70,123 @@ function App() {
 
 
 
+//action.payload-=> dynmic data
 
 
 
-  return (
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// redux thunk
+//middleware
+
+
+
+// normal async function and you don't need to create an extra action to get the data inside your redux store 
+//APi calls
+
+//write logics
+//functionalities
+
+
+
+
+
+
+
+
+// in APP.jsx 
+//7-8 API calls
+
+
+
+// 7-8 same 
+
+
+//1function 
+// get the data , name the variables -8 
+
+
+
+
+//disptch calls and actions
+
+
+
+
+
+
+function fetch() {
+  // API call 
+
+  // weather app 
+  
+  // response data 
+  //local state
+  //redux or my global state
+  
+  //action call
+  
+  //updating my state
+
+const obj = {id:"32",asd:"asd"}
+
+dispatch(newVar(obj))
+
+}
+
+
+useEffect(() => {
+  
+  fetch()
+  
+}, [])
+
+
+
+//actions calls with API's
+
+// /first argument 
+
+
+
+
+
+
+
+
+
+
+
+//make your own thunk pass your subject name and reg no. to the thunk 
+//and store the coming data in the store in a reducer 
+//make the thunk call
+
+//practice question
+
+
+
+
+
+
+
+
+
+
+
+
+
+return (
     <>
       <p>{myState}</p>
        <button onClick={()=>dispatch(incrementCanVary(12))}>add 10</button> 
